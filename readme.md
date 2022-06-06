@@ -10,7 +10,7 @@ But first, the current state of the art in Twitter hello worlds circa the summer
 
 #### You can see what the app does by..
 
-Go to <a href="https://scripting.com/code/twitterhelloworld/index.html">this page</a> and follow the instructions.
+Go to <a href="http://scripting.com/code/twitterhelloworld/index.html">this page</a> and follow the instructions.
 
 #### How the pieces fit together
 
