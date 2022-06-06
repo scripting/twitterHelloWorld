@@ -18,9 +18,9 @@ First, this is not a tutorial for setting up a Twitter app. I'm just listing the
 
 1. You'll need to set up an app on apps.twitter.com. 
 
-Then set the callback URI to http://yourdomain/callbackFromTwitter.
+1. Then set the callback URI to http://yourdomain/callbackFromTwitter.
 
-Get the API Key and secret, and edit the config.json file to include these values. 
+1. Get the API Key and secret, and edit the config.json file to include these values. 
 
 2. There's a Node.js app in this folder. Run npm install to get all the packages it needs. 
 
