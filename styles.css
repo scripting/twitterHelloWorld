@@ -17,3 +17,6 @@ body {
 	display: none;
 	margin-top: 15px;
 	}
+.aSignOffLink {
+	cursor: pointer;
+	}

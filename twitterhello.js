@@ -3,11 +3,12 @@ const utils = require ("daveutils");
 const davetwitter = require ("davetwitter");
 
 var config = {
-	httpPort: 1491,
-	myDomain: "localhost:1491",
+	httpPort: process.env.PORT || 1491,
+	myDomain: "twitterhello.scripting.com",
 	flLogToConsole: true,
 	flAllowAccessFromAnywhere: true,
 	flPostEnabled: true,
+	pathServerHomePageSource: "index.html",
 	twitterConsumerKey: undefined, //provided in config file
 	twitterConsumerSecret: undefined
 	};
@@ -52,11 +53,36 @@ function handleHttpRequest (theRequest) {
 			returnData (jstruct);
 			}
 		}
+	function returnHtml (htmltext) {
+		theRequest.httpReturn (200, "text/html", htmltext);
+		}
+	function returnServerHomePage () {
+		if (config.pathServerHomePageSource !== undefined) {
+			fs.readFile (config.pathServerHomePageSource, function (err, homePageSource) {
+				if (err) {
+					console.log ("returnServerHomePage: err.message == " + err.message + ", f == " + config.pathServerHomePageSource);
+					}
+				else {
+					returnHtml (homePageSource);
+					}
+				});
+			}
+		else {
+			request (config.urlServerHomePageSource, function (err, response, templatetext) {
+				if (!err && response.statusCode == 200) {
+					servePage (templatetext);
+					}
+				});
+			}
+		}
 	switch (theRequest.lowermethod) {
 		case "post":
 			break;
 		case "get":
 			switch (theRequest.lowerpath) {
+				case "/": 
+					returnServerHomePage ();
+					return (true);
 				case "/sendtweet": 
 					davetwitter.sendTweet (token, secret, params.message, undefined, httpReturn);
 					return (true);

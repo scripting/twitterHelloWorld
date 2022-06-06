@@ -36,3 +36,15 @@ First, this is not a tutorial for setting up a Twitter app. I'm just listing the
 
 7. When you're done be sure to click the link to log out.
 
+#### With a simpler Twitter API
+
+If the Twitter API did what the server app here does, posting a Hello World tweet would look something like this.
+
+<code>twitter.newPost ("Hello World")</code>
+
+That's assuming it's running within an app that uses Twitter for identity, like <a href="http://drummer.scripting.com/">Drummer</a>. 
+
+In fact that bit of code actually <a href="http://scripting.com/images/2022/06/06/drummerTwitterHello.png">works</a> in Drummer. :smile:
+
+Here's the <a href="http://docserver.scripting.com/?verb=twitter.newPost">man page</a> for the verb.
+

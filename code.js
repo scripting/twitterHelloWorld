@@ -1,4 +1,4 @@
-const urlTwitterServer = "http://localhost:1491/";
+const urlTwitterServer = "http://twitterhello.scripting.com/";
 
 function servercall (verb, params, flAuthenticated, callback, method, postbody) {
 	if (flAuthenticated === undefined) {
