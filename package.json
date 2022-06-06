@@ -1,0 +1,14 @@
+{
+	"name": "twitterhelloworld",
+	"version": "0.4.0",
+	"author": "Dave Winer <dave@scripting.com>",
+	"main": "twitterhelloworld.js",
+	"license": "MIT",
+	"dependencies" : {
+		"daveutils": "*",
+		"davetwitter": "*"
+		}, 
+	"engines": { 
+		"node": "*"
+		}
+	}

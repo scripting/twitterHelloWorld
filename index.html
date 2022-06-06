@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>Twitter Hello World</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="//s3.amazonaws.com/scripting.com/code/includes/jquery-1.9.1.min.js"></script>
+<link href="//s3.amazonaws.com/scripting.com/code/includes/bootstrap.css" rel="stylesheet">
+<script src="//s3.amazonaws.com/scripting.com/code/includes/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="//s3.amazonaws.com/scripting.com/code/fontawesome/css/all.css">
+<link href="//fonts.googleapis.com/css?family=Ubuntu:400,500i,700" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
+
+<script src="//s3.amazonaws.com/scripting.com/code/includes/basic/code.js"></script>
+<link href="//s3.amazonaws.com/scripting.com/code/includes/basic/styles.css" rel="stylesheet" type="text/css">
+
+		<script src="http://scripting.com/code/nodestorage/api.js"></script>
+		<script src="code.js"></script>
+		<link href="styles.css" rel="stylesheet" type="text/css">
+		</head>
+	<body>
+		<div class="divPageBody">
+			<h1>Twitter Hello World</h1>
+			<div class="divNotSignedOn" id="idNotSignedOn">
+				Click this button to sign on to your Twitter your account.<br><br>
+				<div class="divButtonContainer">
+					<button class="btn btn-large" type="button" onclick="signOnButton ();">Sign on to Twitter</button>
+					</div>
+				</div>
+			<div class="divSignedOn" id="idSignedOn">
+				Click this button to send a "Hello World" message from Twitter. <br><br>
+				<div class="divButtonContainer">
+					<button class="btn btn-large" type="button" onclick="sendHelloWorldTweet ();">Hello World</button>
+					</div>
+				When you're done, <a onclick="signOffButton ()">click here</a> to sign off Twitter. 
+				</div>
+			</div>
+		<script>
+			$(document).ready (function () {
+				startup ();
+				});
+			</script>
+		</body>
+	</html>
