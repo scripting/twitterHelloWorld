@@ -14,7 +14,7 @@ Go to <a href="http://twitterhello.scripting.com/">this page</a> and follow the 
 
 #### A blog post
 
-<a href="http://scripting.com/2022/06/07/161710.html?title=aTwitterHelloWorldApp">Explains</a> the whys and wherefors. 
+<a href="http://scripting.com/2022/06/07/161710.html?title=aTwitterHelloWorldApp">Explains</a> the whys and wherefores. 
 
 #### How the pieces fit together
 
@@ -51,18 +51,6 @@ Then look at the source code, here, for the Hello World client. That's what the 
 Obviously the user's app would have to be given access to more than just the functionality to send a tweet. If you want an idea of what that might look like, here's the <a href="http://scripting.com/code/nodestorage/api.js">interface file</a> for the API I've been using for my own Twitter apps. 
 
 There's nothing very innovative about this, it's just following the natural process of factoring code.
-
-#### It's even simpler in Drummer
-
-If the Twitter API did what the server app here does, posting a Hello World tweet would look something like this.
-
-<code>twitter.newPost ("Hello World")</code>
-
-That's assuming it's running within an app that uses Twitter for identity, like <a href="http://drummer.scripting.com/">Drummer</a>. 
-
-In fact that bit of code actually <a href="http://scripting.com/images/2022/06/06/drummerTwitterHello.png">works</a> in Drummer. :smile:
-
-Here's the <a href="http://docserver.scripting.com/?verb=twitter.newPost">man page</a> for the verb.
 
 #### Comments or questions?
 
