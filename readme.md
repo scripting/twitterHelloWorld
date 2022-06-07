@@ -12,6 +12,10 @@ But first, the current state of the art in Twitter hello worlds circa the summer
 
 Go to <a href="http://twitterhello.scripting.com/">this page</a> and follow the instructions.
 
+#### A blog post
+
+<a href="http://scripting.com/2022/06/07/161710.html?title=aTwitterHelloWorldApp">Explains</a> the whys and wherefors. 
+
 #### How the pieces fit together
 
 First, this is not a tutorial for setting up a Twitter server app. I'm just listing the steps here so you can see how much work is involved in setting up the Hello World app. 
@@ -59,4 +63,8 @@ That's assuming it's running within an app that uses Twitter for identity, like 
 In fact that bit of code actually <a href="http://scripting.com/images/2022/06/06/drummerTwitterHello.png">works</a> in Drummer. :smile:
 
 Here's the <a href="http://docserver.scripting.com/?verb=twitter.newPost">man page</a> for the verb.
+
+#### Comments or questions?
+
+<a href="https://github.com/scripting/twitterHelloWorld/issues/2">Here</a>.
 

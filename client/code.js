@@ -1,16 +1,16 @@
 const urlTwitterServer = "http://twitterhello.scripting.com/";
 
-function buildParamList (paramtable) { 
-	var s = "";
-	for (var x in paramtable) {
-		if (s.length > 0) {
-			s += "&";
-			}
-		s += x + "=" + encodeURIComponent (paramtable [x]);
-		}
-	return (s);
-	}
 function servercall (verb, params, flAuthenticated, callback, method, postbody) {
+	function buildParamList (paramtable) { 
+		var s = "";
+		for (var x in paramtable) {
+			if (s.length > 0) {
+				s += "&";
+				}
+			s += x + "=" + encodeURIComponent (paramtable [x]);
+			}
+		return (s);
+		}
 	if (flAuthenticated === undefined) {
 		flAuthenticated = true;
 		}
