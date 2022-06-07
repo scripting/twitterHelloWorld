@@ -1,5 +1,15 @@
 const urlTwitterServer = "http://twitterhello.scripting.com/";
 
+function buildParamList (paramtable) { 
+	var s = "";
+	for (var x in paramtable) {
+		if (s.length > 0) {
+			s += "&";
+			}
+		s += x + "=" + encodeURIComponent (paramtable [x]);
+		}
+	return (s);
+	}
 function servercall (verb, params, flAuthenticated, callback, method, postbody) {
 	if (flAuthenticated === undefined) {
 		flAuthenticated = true;
@@ -16,7 +26,7 @@ function servercall (verb, params, flAuthenticated, callback, method, postbody) 
 		}
 	
 	var apiUrl = urlTwitterServer + verb;
-	var paramString = twBuildParamList (params);
+	var paramString = buildParamList (params);
 	if (paramString.length > 0) {
 		apiUrl += "?" + paramString;
 		}
@@ -47,47 +57,12 @@ function servercall (verb, params, flAuthenticated, callback, method, postbody) 
 		dataType: "json"
 		});
 	}
-function serverpost (path, params, flAuthenticated, filedata, callback) {
-	var whenstart = new Date ();
-	if (!$.isPlainObject (filedata) && (typeof (filedata) != "string")) { //8/2/21 by DW
-		filedata = filedata.toString ();
-		}
-	if (params === undefined) {
-		params = new Object ();
-		}
-	if (flAuthenticated) { //1/11/21 by DW
-		params.oauth_token = localStorage.twOauthToken;
-		params.oauth_token_secret = localStorage.twOauthTokenSecret;
-		}
-	var url = urlTwitterServer + path + "?" + twBuildParamList (params, false);
-	try {
-		$.post (url, filedata, function (data, status) {
-			if (status == "success") {
-				if (callback !== undefined) {
-					callback (undefined, data);
-					}
-				}
-			else {
-				var err = {
-					code: status.status,
-					message: JSON.parse (status.responseText).message
-					};
-				if (callback !== undefined) {
-					callback (err);
-					}
-				}
-			});
-		}
-	catch (err) {
-		console.log ("yo");
-		}
-	}
 
-function signOnButton () {
+function signOnTwitter () {
 	$(".btn").blur ();
 	twConnectToTwitter ();
 	}
-function signOffButton () {
+function signOffTwitter () {
 	twDisconnectFromTwitter ();
 	location.reload ();
 	}
@@ -118,6 +93,7 @@ function startup () {
 	twStorageData.urlTwitterServer = urlTwitterServer;
 	twGetOauthParams ();
 	if (twIsTwitterConnected ()) {
+		$("#idTwitterScreenname").text (twGetScreenName ());
 		$("#idSignedOn").css ("display", "block");
 		$("#idNotSignedOn").css ("display", "none");
 		}

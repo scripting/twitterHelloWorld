@@ -44,7 +44,7 @@ Everything that's in the server app should be running on Twitter's server. This 
 
 Then look at the source code, here, for the Hello World client. That's what the developer would have to write. Twitter should still have an app registration process, except it wouldn't be concerned with how to get the user logged in, just that the user knows who they're giving access to their account to. 
 
-Obviously the user's app would have to be given access to more than just the functionality to send a tweet. If you want an idea of what that might look like, here's the interface file for the API I've defined for my own apps. 
+Obviously the user's app would have to be given access to more than just the functionality to send a tweet. If you want an idea of what that might look like, here's the <a href="http://scripting.com/code/nodestorage/api.js">interface file</a> for the API I've been using for my own Twitter apps. 
 
 There's nothing very innovative about this, it's just following the natural process of factoring code.
 
