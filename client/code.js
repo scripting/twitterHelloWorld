@@ -101,14 +101,14 @@ function sendHelloWorldTweet () {
 		if (!flcancel) {
 			servercall ("sendtweet", {message: helloWorldMessage}, true, function (err, result) {
 				if (err) {
-					alertDialog (err.message);
+					alertDialog ("Can't send the tweet because: " + err.message);
 					}
 				else {
 					alertDialog ("It worked!");
 					console.log (jsonStringify (result));
 					}
 				});
-			localStorage.lastMessage = lastMessage;
+			localStorage.lastMessage = helloWorldMessage;
 			}
 		});
 	}
